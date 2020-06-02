@@ -14,11 +14,11 @@ import { SearchComponent } from './components/search/search.component';
 import { BookDetailsComponent } from './components/book-details/book-details.component';
 import { CartStatusComponent } from './components/cart-status/cart-status.component';
 import { CartDetailsComponent } from './components/cart-details/cart-details.component';
-import { LoginComponent } from './components/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 const routes : Routes = [
-  {path:"login",component: LoginComponent},
+  {path:"checkout",component: CheckoutComponent},
   {path:"books",component: BookListComponent},
   {path:"books/:id",component: BookDetailsComponent},
   {path:"category/:id",component: BookListComponent},
@@ -38,7 +38,7 @@ const routes : Routes = [
     BookDetailsComponent,
     CartStatusComponent,
     CartDetailsComponent,
-    LoginComponent
+    CheckoutComponent
   ],
   imports: [
     NgbModule,

@@ -1,0 +1,61 @@
+<form [formGroup]="checkoutFormGroup">
+    <fieldset class="border p-2">
+        <legend class="w-auto"><h3>Customer</h3></legend>
+        <div formGroupName="customer">
+            <!-- First name -->
+            <div class="row form-group">
+                <div class="col-md-3">
+                    <label>First Name:</label>
+                </div>
+                <div class="col-md-3">
+                    <div>
+                        <input type="text" formControlName="firstName" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Last name -->
+            <div class="row form-group">
+                <div class="col-md-3">
+                    <label>Last Name:</label>
+                </div>
+                <div class="col-md-3">
+                    <div>
+                        <input type="text" formControlName="lastName" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Email -->
+            <div class="row form-group">
+                <div class="col-md-3">
+                    <label>Email:</label>
+                </div>
+                <div class="col-md-3">
+                    <div>
+                        <input type="text" formControlName="email" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</form>   
+
+<ul class="list-group md-3">
+    <li *ngFor="let cartItem of cartItems" class="list-group-item d-flex justify-content-between lh-condensed">
+        <div>
+            <h6 class="my-0">{{ cartItem.name }}</h6>
+            <small class="text-muted">Quatity (x{{ cartItem.quantity }})</small>
+        </div>
+        <span class="text-muted">{{ cartItem.quantity * cartItem.unitPrice | currency: '$' }}</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between">
+        <span>Total</span>
+        <strong>{{ totalPrice | currency: '$' }}</strong>
+    </li>
+</ul>
+<br>
+
+<div class="text-center">
+    <button type="button" (click)="onSubmit()" class="btn btn-primary">Purchase</button>
+</div>
