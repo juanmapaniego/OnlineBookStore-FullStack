@@ -46,7 +46,6 @@ const routes : Routes = [
     HttpClientModule,
     RouterModule.forRoot(routes),
     NgxSpinnerModule,
-    FormsModule,
     ReactiveFormsModule
   ],
   providers: [
